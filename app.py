@@ -6,7 +6,7 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
 import joblib
-
+ 
 # Función para cargar un modelo CNN guardado
 def load_cnn_model(model_path):
     return tf.keras.models.load_model(model_path)

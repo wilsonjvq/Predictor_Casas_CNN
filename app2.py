@@ -63,7 +63,7 @@ def build_cnn_model(input_shape):
     return model
 
 # Función de entrenamiento con EarlyStopping y guardado del modelo
-def train_cnn_model(model, images, prices, model_path, batch_size=32, epochs=10):
+def train_cnn_model(model, images, prices, model_path, batch_size=32, epochs=1):
     early_stopping = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
     model.fit(images, prices, epochs=epochs, batch_size=batch_size, validation_split=0.1, callbacks=[early_stopping])
     model.save(model_path)  # Guardar el modelo
